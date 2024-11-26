@@ -102,32 +102,31 @@ class _AppPasswordFormFieldState extends State<AppPasswordFormField> {
 }
 
 class _ObscureButton extends StatelessWidget {
-  final bool hasValidationError;
-  final VoidCallback onPressed;
-  final bool obscureText;
-
   const _ObscureButton({
     required this.hasValidationError,
     required this.onPressed,
     this.obscureText = true,
   });
+  final bool hasValidationError;
+  final VoidCallback onPressed;
+  final bool obscureText;
 
   @override
   Widget build(BuildContext context) {
     final color = hasValidationError ? AppColors.error500 : AppColors.icon;
     return GestureDetector(
-        onTap: onPressed,
-        child: obscureText
-            ? _ObscureIcon(path: Assets.hidePasswordIcon, color: color)
-            : _ObscureIcon(path: Assets.showPasswordIcon, color: color));
+      onTap: onPressed,
+      child: obscureText
+          ? _ObscureIcon(path: Assets.hidePasswordIcon, color: color)
+          : _ObscureIcon(path: Assets.showPasswordIcon, color: color),
+    );
   }
 }
 
 class _ObscureIcon extends StatelessWidget {
+  const _ObscureIcon({required this.path, required this.color});
   final String path;
   final Color color;
-
-  const _ObscureIcon({required this.path, required this.color});
   @override
   Widget build(BuildContext context) {
     return SvgPicture.asset(
@@ -140,10 +139,9 @@ class _ObscureIcon extends StatelessWidget {
 }
 
 class _PasswordHint extends StatelessWidget {
+  const _PasswordHint({required this.colorBuilder, required this.requirement});
   final PasswordRequirements requirement;
   final Color Function(PasswordRequirements) colorBuilder;
-
-  const _PasswordHint({required this.colorBuilder, required this.requirement});
   @override
   Widget build(BuildContext context) {
     return Text(

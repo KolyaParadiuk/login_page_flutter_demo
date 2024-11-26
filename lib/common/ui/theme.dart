@@ -20,7 +20,6 @@ final appTheme = ThemeData(
     errorBorder: OutlineInputBorder(
       borderSide: const BorderSide(
         color: AppColors.error500,
-        width: 1,
       ),
       borderRadius: BorderRadius.circular(10),
     ),

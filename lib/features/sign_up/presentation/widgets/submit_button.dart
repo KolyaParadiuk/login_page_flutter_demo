@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -38,7 +40,12 @@ class SubmitButton extends StatelessWidget {
     final isValidData = await context.read<SignUpCubit>().signUp();
 
     if (isValidData && context.mounted) {
-      showDialog(context: context, builder: (c) => const _SuccessDialog());
+      unawaited(
+        showDialog<void>(
+          context: context,
+          builder: (c) => const _SuccessDialog(),
+        ),
+      );
     }
   }
 }

@@ -8,12 +8,14 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
 
-  runApp(EasyLocalization(
-    supportedLocales: const [Locale('en')],
-    path: Assets.translations,
-    fallbackLocale: const Locale('en'),
-    child: MainApp(),
-  ));
+  runApp(
+    EasyLocalization(
+      supportedLocales: const [Locale('en')],
+      path: Assets.translations,
+      fallbackLocale: const Locale('en'),
+      child: MainApp(),
+    ),
+  );
 }
 
 class MainApp extends StatelessWidget {
@@ -29,6 +31,7 @@ class MainApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
+      debugShowCheckedModeBanner: false,
     );
   }
 }

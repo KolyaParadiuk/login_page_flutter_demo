@@ -30,7 +30,6 @@ class EmailInputField extends StatelessWidget {
     );
     const successBorderSide = BorderSide(
       color: AppColors.success500,
-      width: 1,
     );
     final decoration = InputDecoration(
       enabledBorder: emailValidatedSuccess

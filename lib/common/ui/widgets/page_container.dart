@@ -12,7 +12,6 @@ class PageContainer extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(gradient: AppGradients.background),
       child: SafeArea(
-        top: true,
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(

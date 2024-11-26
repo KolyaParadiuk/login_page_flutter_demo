@@ -11,7 +11,5 @@ class AppGradients {
 
   static const LinearGradient button = LinearGradient(
     colors: [AppColors.buttonBackgroundStart, AppColors.buttonBackgroundFinish],
-    begin: Alignment.centerLeft,
-    end: Alignment.centerRight,
   );
 }

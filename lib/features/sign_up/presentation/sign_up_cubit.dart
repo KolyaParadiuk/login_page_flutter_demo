@@ -12,35 +12,43 @@ class SignUpCubit extends Cubit<SignUpState> {
   }
 
   void onEmailChanged(String email) {
-    emit(state.copyWith(
-      email: email,
-      emailValidatedSuccess: false,
-      emailError: false,
-    ));
+    emit(
+      state.copyWith(
+        email: email,
+        emailValidatedSuccess: false,
+        emailError: false,
+      ),
+    );
   }
 
   void onPasswordChanged(String? password) {
     final errors = PasswordValidator.validate(password ?? '');
-    emit(state.copyWith(
-      password: password,
-      inTimeValidationPasswordErrors: errors,
-      lateValidationPasswordErrors: [],
-    ));
+    emit(
+      state.copyWith(
+        password: password,
+        inTimeValidationPasswordErrors: errors,
+        lateValidationPasswordErrors: [],
+      ),
+    );
   }
 
-  validateEmail() {
+  void validateEmail() {
     final isValid = EmailValidator.validate(state.email);
-    emit(state.copyWith(
-      emailError: !isValid,
-      emailValidatedSuccess: isValid,
-    ));
+    emit(
+      state.copyWith(
+        emailError: !isValid,
+        emailValidatedSuccess: isValid,
+      ),
+    );
   }
 
-  validatePassword() {
+  void validatePassword() {
     final errors = PasswordValidator.validate(state.password ?? '');
-    emit(state.copyWith(
-      lateValidationPasswordErrors: errors,
-    ));
+    emit(
+      state.copyWith(
+        lateValidationPasswordErrors: errors,
+      ),
+    );
   }
 }
 
