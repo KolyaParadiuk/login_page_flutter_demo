@@ -1,0 +1,13 @@
+{
+    "signUpTitle":"Sign Up",
+    "createPasswordHint":"Create your password",
+    "singUpButtonLabel":"Sign Up",
+    "successSignUpMessage":"Sign up success",
+    "enterEmailHint":"Enter your email",
+    "invalidEmailMessage":"Invalid email",
+    "passwordValidationErrors":{
+        "lengthMoreThen8":"8 characters or more (no spaces)",
+        "upperLowerCase":"Uppercase and lowercase letters",
+        "number":"At least one digit"
+    }
+}
