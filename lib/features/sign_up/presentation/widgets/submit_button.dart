@@ -53,7 +53,7 @@ class _SuccessDialog extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Text(
-          LocaleKeys.singUpButtonLabel.tr(),
+          LocaleKeys.successSignUpMessage.tr(),
           textAlign: TextAlign.center,
         ),
       ),
